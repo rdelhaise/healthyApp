@@ -1,0 +1,9 @@
+{
+    "name": "healthyapp/healthyapp",
+    "autoload": {
+        "psr-4": {
+            "App\\":"classes/"
+        }
+    },
+    "require": {}
+}
