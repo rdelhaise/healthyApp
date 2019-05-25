@@ -7,11 +7,14 @@
             </div>
             <div class="card-body">
                 <div class="row py-4 m-0">
-                        <div class="col-6"><span>Date Begin</span></div>
-                        <div class="col-6"><span class="float-right">Diet Type</span></div>
+                    <div class="col-6"><span>Date Begin</span></div>
+                    <div class="col-6"><span class="float-right">Diet Type</span></div>
                 </div>
                 <hr class="w-100">
-                <div class="col-sm-8">
+                <div class="row">
+
+
+                <div class="col-sm-6">
 
                     <h4>General Informations</h4>
                     Date Birth : <br/>
@@ -24,7 +27,8 @@
                         <span class="col-xl-6"> Gender : </span>
                         <span class="col-xl-6"> Smoking : </span>
                     </div>
-                    <hr class="w-100">
+                </div>
+                <div class="col-sm-6">
                     <h4>Address Informations</h4>
                     Address : <br/>
                     <div class="row">
@@ -32,9 +36,11 @@
                         <span class="col-xl-6"> ZipCode : </span>
                     </div>
                     Country : <br/>
+                </div>
                     <hr class="w-100">
+
+                    <div class="col-sm-6">
                     <h4>Body Informations</h4>
-                    <p>
                     <div class="row">
                             <span class="col-xl-6">
                                 Height:
@@ -44,30 +50,37 @@
                             </span>
                     </div>
                     Measurements : (Hanche, Taille, Jambes)<br/>
-                    </p>
-                    <hr class="w-100">
+                </div>
+
+                <div class="col-xl-6">
                     <h4>Feeding Informations :</h4>
                     <p>
                         Food Type : <br/>
                         Allergy : <br/>
                     </p>
+                </div>
                     <hr class="w-100">
+                <div class="col-sm-6">
                     <h4>Family History</h4>
                     <p></p>
-                    <hr class="w-100">
+                </div>
+                <div class="col-sm-6">
                     <h4>Sport<br/></h4>
                     <p></p>
-                    <hr class="w-100">
+                </div>
+                <hr class="w-100">
+                <div class="col-sm-6">
                     <h4>Diseases</h4>
                     <p></p>
+                </div>
                 </div>
             </div>
         </div>
     </div>
-        <div class="container-fluid col-xl-3 col-lg-3" id="dietProfile">
-                <img class="img-fluid rounded"
-                     src="http://mangeteslegumes.net/wp-content/uploads/2016/09/IMG_02491.jpg"/>
-        </div>
+    <div class="container-fluid col-xl-3 col-lg-3" id="dietProfile">
+        <img class="img-fluid rounded"
+             src="http://mangeteslegumes.net/wp-content/uploads/2016/09/IMG_02491.jpg"/>
+    </div>
 
     <!-- /.container-fluid -->
 
