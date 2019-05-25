@@ -6,8 +6,20 @@
 .login-form{
     background-color: #87E990;
 }
+
+.bg-general-color{
+    background-color: #87E990;
+}
+
+
 .btn-login{
     color: #fff;
     background-color: #1cc88a;
     border-color: #1cc88a;
+}
+#dietProfile:hover a {
+    text-decoration: none!important;
+}
+#bodyDiet {
+    color:black!important;
 }
