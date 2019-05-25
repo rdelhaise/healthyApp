@@ -11,3 +11,6 @@
     background-color: #1cc88a;
     border-color: #1cc88a;
 }
+.row-equal-height{
+    display: flex;
+}
