@@ -56,7 +56,7 @@
                     </div>
                     <hr class="w-100">
                     <div class="col-xl-12" id="bodyDiet">
-                        Name Firstname <br/>
+                        <span> Name Firstname </span><br/>
                         Last Appointment : <br/>
                         Address : <br/>
                         E-mail : <br/>
@@ -75,8 +75,5 @@
 
 </div>
 
-<!-- Scroll to Top Button-->
-<a class="scroll-to-top rounded" href="#page-top">
-    <i class="fas fa-angle-up"></i>
-</a>
+
 

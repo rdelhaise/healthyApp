@@ -20,6 +20,9 @@
 #dietProfile:hover a {
     text-decoration: none!important;
 }
+#bodyDiet span {
+    font-weight: bold;
+}
 #bodyDiet {
     color:black!important;
 }
