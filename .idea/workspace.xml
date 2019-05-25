@@ -50,7 +50,7 @@
           <entry key="CSS" value="1" />
           <entry key="HTML" value="3" />
           <entry key="JSON" value="27" />
-          <entry key="PHP" value="277" />
+          <entry key="PHP" value="281" />
         </counts>
       </usages-collector>
     </session>
@@ -87,8 +87,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/public/login.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="529">
-              <caret line="33" column="20" selection-start-line="33" selection-start-column="20" selection-end-line="33" selection-end-column="20" />
+            <state relative-caret-position="721">
+              <caret line="41" lean-forward="true" selection-start-line="41" selection-end-line="41" />
             </state>
           </provider>
         </entry>
@@ -267,12 +267,12 @@
       <workItem from="1557822894427" duration="698000" />
       <workItem from="1557902627581" duration="551000" />
       <workItem from="1558526062991" duration="340000" />
-      <workItem from="1558785409382" duration="5586000" />
+      <workItem from="1558785409382" duration="5687000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="14027000" />
+    <option name="totallyTimeSpent" value="14128000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1920" height="1080" extended-state="0" />
@@ -441,8 +441,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/public/login.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="529">
-          <caret line="33" column="20" selection-start-line="33" selection-start-column="20" selection-end-line="33" selection-end-column="20" />
+        <state relative-caret-position="721">
+          <caret line="41" lean-forward="true" selection-start-line="41" selection-end-line="41" />
         </state>
       </provider>
     </entry>
