@@ -1,7 +1,11 @@
 <?php
 require "vendor/autoload.php";
-use App\Test\Test;
-new Test();
+
+include "templates/header.php";
+include "public/login.php";
+include "templates/footer.php";
+
+
 /**
  * Created by PhpStorm.
  * User: remy
