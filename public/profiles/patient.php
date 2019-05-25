@@ -57,7 +57,7 @@
                         <h4>Sport<br/></h4>
                         <p></p>
                         <hr class="w-100">
-                        <h4>Diseases :</h4>
+                        <h4>Diseases</h4>
                         <p></p>
                     </div>
                     <div class="col-xl-4">
