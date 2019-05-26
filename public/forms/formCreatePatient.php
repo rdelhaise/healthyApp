@@ -22,6 +22,14 @@
                                 <input type="text" class="form-control form-control-user" id="lastName" name="lastName" placeholder="Last Name">
                             </div>
                         </div>
+                        <div class="form-group row">
+                            <div class="col-sm-6">
+                                <input type="tel" class="form-control form-control-user" id="phoneNumber" name="phoneNumber" placeholder="Phone Number">
+                            </div>
+                            <div class="col-sm-6">
+                                <input type="tel" class="form-control form-control-user" id="mobileNumber" name="mobileNumber" placeholder="Mobile Number">
+                            </div>
+                        </div>
                         <div class="form-group">
                             <input type="email" class="form-control form-control-user" id="email" name="email" placeholder="Email Address">
                         </div>
