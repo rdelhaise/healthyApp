@@ -14,65 +14,65 @@
                 <div class="row">
 
 
-                <div class="col-sm-6">
+                    <div class="col-sm-6">
 
-                    <h4>General Informations</h4>
-                    Date Birth : <br/>
-                    E-mail : <br/>
-                    <div class="row">
-                        <span class="col-xl-6"> Phone number : </span>
-                        <span class="col-xl-6"> Mobile : </span>
+                        <h4>General Informations</h4>
+                        Date Birth : <br/>
+                        E-mail : <br/>
+                        <div class="row">
+                            <span class="col-xl-6"> Phone number : </span>
+                            <span class="col-xl-6"> Mobile : </span>
+                        </div>
+                        <div class="row">
+                            <span class="col-xl-6"> Gender : </span>
+                            <span class="col-xl-6"> Smoking : </span>
+                        </div>
                     </div>
-                    <div class="row">
-                        <span class="col-xl-6"> Gender : </span>
-                        <span class="col-xl-6"> Smoking : </span>
+                    <div class="col-sm-6">
+                        <h4>Address Informations</h4>
+                        Address : <br/>
+                        <div class="row">
+                            <span class="col-xl-6"> City : </span>
+                            <span class="col-xl-6"> ZipCode : </span>
+                        </div>
+                        Country : <br/>
                     </div>
-                </div>
-                <div class="col-sm-6">
-                    <h4>Address Informations</h4>
-                    Address : <br/>
-                    <div class="row">
-                        <span class="col-xl-6"> City : </span>
-                        <span class="col-xl-6"> ZipCode : </span>
-                    </div>
-                    Country : <br/>
-                </div>
                     <hr class="w-100">
 
                     <div class="col-sm-6">
-                    <h4>Body Informations</h4>
-                    <div class="row">
+                        <h4>Body Informations</h4>
+                        <div class="row">
                             <span class="col-xl-6">
                                 Height:
                             </span>
-                        <span class="col-xl-6">
+                            <span class="col-xl-6">
                                 Weight :
                             </span>
+                        </div>
+                        Measurements : (Hanche, Taille, Jambes)<br/>
                     </div>
-                    Measurements : (Hanche, Taille, Jambes)<br/>
-                </div>
 
-                <div class="col-xl-6">
-                    <h4>Feeding Informations :</h4>
-                    <p>
-                        Food Type : <br/>
-                        Allergy : <br/>
-                    </p>
-                </div>
+                    <div class="col-xl-6">
+                        <h4>Feeding Informations :</h4>
+                        <p>
+                            Food Type : <br/>
+                            Allergy : <br/>
+                        </p>
+                    </div>
                     <hr class="w-100">
-                <div class="col-sm-6">
-                    <h4>Family History</h4>
-                    <p></p>
-                </div>
-                <div class="col-sm-6">
-                    <h4>Sport<br/></h4>
-                    <p></p>
-                </div>
-                <hr class="w-100">
-                <div class="col-sm-6">
-                    <h4>Diseases</h4>
-                    <p></p>
-                </div>
+                    <div class="col-sm-6">
+                        <h4>Family History</h4>
+                        <p></p>
+                    </div>
+                    <div class="col-sm-6">
+                        <h4>Sport<br/></h4>
+                        <p></p>
+                    </div>
+                    <hr class="w-100">
+                    <div class="col-sm-6">
+                        <h4>Diseases</h4>
+                        <p></p>
+                    </div>
                 </div>
             </div>
         </div>
