@@ -52,7 +52,8 @@
                 </div>
                 <div class="card-body row">
                     <div class="col-xl-12" id="img-diet">
-                        <img src="http://mangeteslegumes.net/wp-content/uploads/2016/09/IMG_02491.jpg" class=" mx-auto d-block img-fluid rounded" width="100" height="100"/>
+                        <img src="http://mangeteslegumes.net/wp-content/uploads/2016/09/IMG_02491.jpg"
+                             class=" mx-auto d-block img-fluid rounded" width="100" height="100"/>
                     </div>
                     <hr class="w-100">
                     <div class="col-xl-12" id="bodyDiet">
