@@ -1,13 +1,13 @@
 <div class="row" style="margin: 0px!important">
     <!-- Begin Page Content -->
-    <div class="container-fluid col-xl-9 col-lg-9" id="meals">
+    <div class="container-fluid col-xl-9 col-lg-9" id="patients">
         <div class="card shadow mb-4">
             <div class="card-header py-3 bg-general-color">
-                <h5 class="m-0 font-weight-bold text-white">Meals</h5>
+                <h5 class="m-0 font-weight-bold text-white">Patients</h5>
             </div>
             <div class="card-body">
                 <div class="table-responsive">
-                    <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                    <table class="table table-bordered table-hover" width="100%" cellspacing="0">
                         <thead>
                         <tr>
                             <th>Name</th>
@@ -19,22 +19,22 @@
                         </tr>
                         </thead>
                         <tbody>
-                        <tr>
-                            <td>Tiger Nixon</td>
-                            <td>System Architect</td>
-                            <td>Edinburgh</td>
-                            <td>61</td>
-                            <td>2011/04/25</td>
-                            <td>$320,800</td>
-                        </tr>
-                        <tr>
-                            <td>Donna Snider</td>
-                            <td>Customer Support</td>
-                            <td>New York</td>
-                            <td>27</td>
-                            <td>2011/01/25</td>
-                            <td>$112,000</td>
-                        </tr>
+                            <tr>
+                                    <td>Tiger Nixon</td>
+                                    <td>System Architect</td>
+                                    <td>Edinburgh</td>
+                                    <td>61</td>
+                                    <td>2011/04/25</td>
+                                    <td>$320,800</td>
+                            </tr>
+                            <tr>
+                                    <td>Donna Snider</td>
+                                    <td>Customer Support</td>
+                                    <td>New York</td>
+                                    <td>27</td>
+                                    <td>2011/01/25</td>
+                                    <td>$112,000</td>
+                            </tr>
                         </tbody>
                     </table>
                 </div>
@@ -44,11 +44,11 @@
 
     </div>
 
-    <div class="container-fluid col-xl-3 col-lg-3 profiles" id="dietProfile">
+    <div class="container-fluid col-xl-3 col-lg-3 profiles" id="patientProfile">
         <a href="#">
             <div class="card shadow mb-4 ">
                 <div class="card-header py-3 bg-general-color">
-                    <h5 class="m-0 font-weight-bold text-white">Dietitian Profile</h5>
+                    <h5 class="m-0 font-weight-bold text-white">Patient Profile</h5>
                 </div>
                 <div class="card-body row">
                     <div class="col-xl-12" id="img-diet">
@@ -60,6 +60,8 @@
                         <span> Name Firstname </span><br/>
                         Last Appointment : <br/>
                         Address : <br/>
+                        Weight: <br/>
+                        Mensurations : <br/>
                         E-mail : <br/>
                         Tel. : <br/>
                         Mobile : <br/>
