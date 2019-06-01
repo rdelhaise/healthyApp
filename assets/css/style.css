@@ -17,8 +17,12 @@
     background-color: #1cc88a;
     border-color: #1cc88a;
 }
-#dietProfile:hover a {
+.profiles:hover a {
     text-decoration: none!important;
+}
+
+#patients tbody tr {
+    cursor: pointer;
 }
 #bodyDiet span {
     font-weight: bold;
