@@ -7,11 +7,9 @@
 <div id="content">
 
     <!-- Topbar -->
-    <nav class="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow">
-        <div>
-            <a href="" class="btn btn-outline-success btn-user btn-block"><i class="fas fa-arrow-circle-left"> Return to the HomePage</i></a>
+    <nav class="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow p-0">
 
-        </div>
+
 
 
 
@@ -28,6 +26,10 @@
                 </a>
                 <!-- Dropdown - User Information -->
                 <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="userDropdown">
+                    <a class="dropdown-item" href="/">
+                        <i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>
+                        Return to homepage
+                    </a> -
                     <a class="dropdown-item" href="#">
                         <i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>
                         Profile

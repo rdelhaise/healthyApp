@@ -5,5 +5,7 @@
             "App\\":"classes/"
         }
     },
-    "require": {}
+    "require": {
+        "altorouter/altorouter": "^1.2"
+    }
 }
