@@ -1,8 +1,16 @@
+import 'bootstrap/dist/css/bootstrap.min.css';
+import "jquery/dist/jquery.min";
+import "popper.js/dist/popper.min";
+import 'bootstrap/dist/js/bootstrap.min';
+import "@fortawesome/fontawesome-free/css/all.min.css";
+import '@fortawesome/fontawesome-free/js/all.min';
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
+
+
 
 ReactDOM.render(<App />, document.getElementById('root'));
 

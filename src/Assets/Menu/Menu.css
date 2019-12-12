@@ -1,0 +1,14 @@
+.bg-light{
+    background-color: #87E990!important;
+}
+.navbar > a {
+    color:white!important;
+}
+li > a {
+    font-weight: lighter;
+    color:white!important;
+}
+.navbar-toggler{
+    color: white!important;
+    border:none;
+}
