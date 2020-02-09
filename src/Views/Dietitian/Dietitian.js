@@ -47,14 +47,20 @@ class Dietitian extends React.Component {
         <Menu />
 
         {this.state.isLoaded ? (
-          this.props.type === "edit" ? (
-            <FormDietitian
-              dietitian={this.state.dietitian}
-              handleChange={this.handleChange}
-              handleSave={this.handleSave}
-            />
+          this.props.dietitian ? (
+            this.props.type === "edit" ? (
+              <FormDietitian
+                dietitian={this.state.dietitian}
+                handleChange={this.handleChange}
+                handleSave={this.handleSave}
+              />
+            ) : (
+              <ReaderDietitian dietitian={this.state.dietitian} />
+            )
           ) : (
-            <ReaderDietitian dietitian={this.state.dietitian} />
+            <div class="row">
+              <p className="mx-auto">Aucune data</p>
+            </div>
           )
         ) : (
           <div className="row">
