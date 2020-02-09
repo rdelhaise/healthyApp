@@ -24,21 +24,28 @@ class Menu extends React.Component {
             <ul className="navbar-nav">
               <li className="nav-item active">
                 <a className="nav-link" href="#">
-                  Home <span className="sr-only">(current)</span>
+                  Dietitian's list
                 </a>
               </li>
               <li className="nav-item">
                 <a className="nav-link" href="#">
-                  Features
+                  My dietitian
                 </a>
               </li>
               <li className="nav-item">
                 <a className="nav-link" href="#">
-                  Pricing
+                  My profile
                 </a>
               </li>
             </ul>
           </div>
+          <ul class="nav justify-content-end">
+            <li class="nav-item">
+              <a class="nav-link" href="#">
+                Log out
+              </a>
+            </li>
+          </ul>
         </nav>
       </>
     );

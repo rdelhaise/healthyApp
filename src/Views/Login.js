@@ -15,9 +15,10 @@ class Login extends React.Component {
     e.persist();
     this.setState(state => (state[e.target.name] = e.target.value));
   };
-  handleLogin = () => {
+  handleLogin = event => {
+    event.preventDefault();
     if (this.state.username === "admin" && this.state.password === "admin") {
-      history.push("dietitian/1/edit");
+      history.push("/home");
     }
   };
   render() {
@@ -47,7 +48,7 @@ class Login extends React.Component {
               />
               <div className={"row "}>
                 <button
-                  type={"button"}
+                  type={"submit"}
                   formTarget={"login-form"}
                   className={"btn btn-success col-5 m-auto"}
                   onClick={this.handleLogin}
