@@ -23,7 +23,7 @@ const Error404 = () => {
       <div className="row ">
         <h4 className="mx-auto">
           Êtes-vous perdu ? Médor peut vous aider ! <br />
-          Cliquez lui dessus pour retourner à l'accueil.
+          Cliquez lui DESSUS pour retourner à l'accueil.
         </h4>
       </div>
       <img
