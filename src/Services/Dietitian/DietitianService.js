@@ -1,5 +1,5 @@
-const apiUrl = "http://192.168.1.100:8080/dietitian/";
-
+import apiUrl from "../../config/api.js";
+const apiUrlDietitian = apiUrl + "dietitian/";
 class DietitianService {
   getDietitians = () => {
     let myHeaders = {
@@ -7,7 +7,7 @@ class DietitianService {
       "Content-Type": "application/json"
     };
 
-    return fetch(apiUrl + "all", {
+    return fetch(apiUrlDietitian + "all", {
       method: "GET",
       headers: myHeaders
     })
@@ -22,7 +22,7 @@ class DietitianService {
       "Content-Type": "application/json"
     };
 
-    return fetch(apiUrl + dietitianId, {
+    return fetch(apiUrlDietitian + dietitianId, {
       method: "GET",
       headers: myHeaders
     })
