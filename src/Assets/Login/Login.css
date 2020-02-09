@@ -1,28 +1,6 @@
-.loginForm{
+.loginForm {
     position: absolute;
     top: 50%;
     left: 50%;
-    /* bring your own prefixes */
     transform: translate(-50%, -50%);
-}
-
-.login {
-
-    border: 0.5px solid #87E990 ;
-    border-radius: 5px;
-
-}
-
-.lead{
-    color:#87E990!important;
-    font-weight: bold;
-    font-size: 1.3em;
-}
-
-.btn-success{
-    background-color: #009aad;
-    border:none
-}
-.btn-success:hover{
-    background-color: #036f7b;
 }

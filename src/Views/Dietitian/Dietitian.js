@@ -5,12 +5,11 @@ import Menu from "../../Components/Menu";
 import DietitianService from "../../Services/Dietitian/DietitianService";
 
 
-
-class Dietitian extends React.Component{
+class Dietitian extends React.Component {
 
     initialState = {
-        isLoaded : false,
-        dietitian : ""
+        isLoaded: false,
+        dietitian: ""
     };
 
     constructor(props) {
@@ -26,13 +25,13 @@ class Dietitian extends React.Component{
     }
 
     render() {
-        return(
+        return (
             <>
                 <Menu/>
 
 
                 {this.props.type === "edit" ?
-                    <FormDietitian/>:
+                    <FormDietitian/> :
                     <ReaderDietitian/>
                 }
 

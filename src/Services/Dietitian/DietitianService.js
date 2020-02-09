@@ -1,37 +1,36 @@
+const apiUrl = "http://192.168.1.100:8080/dietitian/";
 
-const apiUrl = "http://192.168.1.100:8080/dietitians/";
+class DietitianService {
+  getDietitians = () => {
+    let myHeaders = {
+      Accept: "application/json",
+      "Content-Type": "application/json"
+    };
 
-class DietitianService{
-        getDietitians = () => {
-            let myHeaders = {
-                'Accept': 'application/json',
-                'Content-Type': 'application/json',
+    return fetch(apiUrl + "all", {
+      method: "GET",
+      headers: myHeaders
+    })
+      .then(response => {
+        return response.json();
+      })
+      .catch(err => console.log(err));
+  };
+  getDietitianById = dietitianId => {
+    let myHeaders = {
+      Accept: "application/json",
+      "Content-Type": "application/json"
+    };
 
-            };
-
-            return fetch(apiUrl, {
-                method: "GET",
-                headers:myHeaders,
-            }).then((response) => {
-                return response.json()}
-            ).catch((err) => console.log(err));
-        };
-        getDietitianById = (dietitianId) => {
-            let myHeaders = {
-                'Accept': 'application/json',
-                'Content-Type': 'application/json',
-
-            };
-
-            return fetch(apiUrl + dietitianId, {
-                method: "GET",
-                headers:myHeaders,
-            }).then((response) => {
-                return response.json()}
-            ).catch((err) => console.log(err));
-        };
-
-
+    return fetch(apiUrl + dietitianId, {
+      method: "GET",
+      headers: myHeaders
+    })
+      .then(response => {
+        return response.json();
+      })
+      .catch(err => console.log(err));
+  };
 }
 
 const instance = new DietitianService();
