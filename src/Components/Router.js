@@ -3,6 +3,7 @@ import Login from "../Views/Login";
 import { Router, Route, Switch } from "react-router-dom";
 import history from "./history";
 import Dietitian from "../Views/Dietitian/Dietitian";
+import Error404 from "../Views/Error404";
 
 class Routers extends React.Component {
   render() {
@@ -28,10 +29,13 @@ class Routers extends React.Component {
                   return (
                     <Dietitian type={"view"} idDietitian={match.params.id} />
                   );
+                } else {
+                  return <Error404 />;
                 }
               }
             }}
           ></Route>
+          <Route component={Error404} />
         </Switch>
       </Router>
     );

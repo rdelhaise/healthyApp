@@ -47,7 +47,7 @@ class Dietitian extends React.Component {
         <Menu />
 
         {this.state.isLoaded ? (
-          this.props.dietitian ? (
+          this.state.dietitian ? (
             this.props.type === "edit" ? (
               <FormDietitian
                 dietitian={this.state.dietitian}
