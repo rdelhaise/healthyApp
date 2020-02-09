@@ -39,9 +39,9 @@ class Menu extends React.Component {
               </li>
             </ul>
           </div>
-          <ul class="nav justify-content-end">
-            <li class="nav-item">
-              <a class="nav-link" href="#">
+          <ul className="nav justify-content-end">
+            <li className="nav-item">
+              <a className="nav-link" href="#">
                 Log out
               </a>
             </li>

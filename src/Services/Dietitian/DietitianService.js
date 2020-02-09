@@ -31,6 +31,23 @@ class DietitianService {
       })
       .catch(err => console.log(err));
   };
+
+  updateDietitian = dietitian => {
+    let myHeaders = {
+      Accept: "application/json",
+      "Content-Type": "application/json"
+    };
+
+    return fetch(apiUrlDietitian + "/save", {
+      method: "post",
+      headers: myHeaders,
+      body: JSON.stringify(dietitian)
+    })
+      .then(response => {
+        console.log(response);
+      })
+      .catch(err => console.log(err));
+  };
 }
 
 const instance = new DietitianService();

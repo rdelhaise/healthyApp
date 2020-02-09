@@ -21,9 +21,13 @@ class Routers extends React.Component {
             render={({ match }) => {
               if (match.params.id && match.params.type) {
                 if (match.params.type === "edit") {
-                  return <Dietitian type={"edit"} />;
+                  return (
+                    <Dietitian type={"edit"} idDietitian={match.params.id} />
+                  );
                 } else if (match.params.type === "view") {
-                  return <Dietitian type={"view"} />;
+                  return (
+                    <Dietitian type={"view"} idDietitian={match.params.id} />
+                  );
                 }
               }
             }}
