@@ -44,7 +44,7 @@ class PatientService {
       body: JSON.stringify(patient)
     })
       .then(response => {
-        console.log(response);
+        return response;
       })
       .catch(err => console.log(err));
   };

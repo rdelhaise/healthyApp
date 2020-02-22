@@ -11,12 +11,12 @@ import Dietitians from "../Views/Dietitian/Dietitians";
 class Routers extends React.Component {
   render() {
     if (!localStorage.getItem("authenticate")) {
-      history.push("/login");
+      history.push("/");
     }
     return (
       <Router history={history}>
         <Switch>
-          <Route exact path="/home" onEnter={this.requireAuth}>
+          <Route exact path="/home">
             <Home />
           </Route>
           <Route exact path="/dietitians" component={Dietitians} />
@@ -38,7 +38,7 @@ class Routers extends React.Component {
             }}
             onEnter={this.requireAuth}
           ></Route>
-          <Route component={Login} exact path="/login" />
+          <Route component={Login} exact path="/" />
 
           <Route path={"*"} component={Error404} />
         </Switch>

@@ -27,7 +27,7 @@ export class Dietitians extends Component {
         <Menu />
         <div className="container">
           {this.state.dietitians.length > 0 ? (
-            <table class="table table-hover ">
+            <table className="table table-hover ">
               <thead>
                 <tr>
                   <th scope="col">Last Name</th>

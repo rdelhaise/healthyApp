@@ -26,6 +26,8 @@ class Dietitian extends React.Component {
     switch (type) {
       case "success":
         return NotificationManager.success(message);
+      case "error":
+        return NotificationManager.error(message);
     }
   };
 
@@ -46,11 +48,16 @@ class Dietitian extends React.Component {
 
   handleSave = e => {
     e.preventDefault();
-    DietitianService.updateDietitian(this.state.dietitian).then(() => {
-      this.createNotification(
-        "success",
-        "L'enregistrement a bien été sauvegardé."
-      );
+    DietitianService.updateDietitian(this.state.dietitian).then(response => {
+      console.log(response);
+      if (response.status === 201) {
+        this.createNotification(
+          "success",
+          "L'enregistrement a bien été sauvegardé."
+        );
+      } else {
+        this.createNotification("error", "Une erreur est survenue.");
+      }
     });
   };
 

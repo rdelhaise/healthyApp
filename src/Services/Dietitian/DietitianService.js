@@ -44,7 +44,7 @@ class DietitianService {
       body: JSON.stringify(dietitian)
     })
       .then(response => {
-        console.log(response);
+        return response;
       })
       .catch(err => console.log(err));
   };

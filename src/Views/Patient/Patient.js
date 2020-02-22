@@ -19,6 +19,8 @@ class Patient extends React.Component {
     switch (type) {
       case "success":
         return NotificationManager.success(message);
+      case "error":
+        return NotificationManager.error(message);
     }
   };
 
@@ -46,11 +48,15 @@ class Patient extends React.Component {
 
   handleSave = e => {
     e.preventDefault();
-    PatientService.updatePatient(this.state.patient).then(() => {
-      this.createNotification(
-        "success",
-        "L'enregistrement a bien été sauvegardé."
-      );
+    PatientService.updatePatient(this.state.patient).then(response => {
+      if (response.status === 201) {
+        this.createNotification(
+          "success",
+          "L'enregistrement a bien été sauvegardé."
+        );
+      } else {
+        this.createNotification("error", "Une erreur est survenue.");
+      }
     });
   };
 
