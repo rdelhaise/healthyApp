@@ -20,7 +20,6 @@ class Dietitian extends React.Component {
   }
 
   componentDidMount() {
-    console.log(JSON.parse(localStorage.getItem("authenticate")).role);
     DietitianService.getDietitianById(this.props.idDietitian).then(json => {
       this.setState(state => {
         state.isLoaded = true;
