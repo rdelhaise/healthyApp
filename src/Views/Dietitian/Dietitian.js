@@ -20,6 +20,7 @@ class Dietitian extends React.Component {
   }
 
   componentDidMount() {
+    console.log(JSON.parse(localStorage.getItem("authenticate")).role);
     DietitianService.getDietitianById(this.props.idDietitian).then(json => {
       this.setState(state => {
         state.isLoaded = true;
@@ -58,7 +59,7 @@ class Dietitian extends React.Component {
               <ReaderDietitian dietitian={this.state.dietitian} />
             )
           ) : (
-            <div class="row">
+            <div className="row">
               <p className="mx-auto">Aucune data</p>
             </div>
           )

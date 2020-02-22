@@ -1,13 +1,27 @@
-.navbar>a {
-    color: white !important;
+.navbar > a {
+  color: white !important;
 }
 
-li>a {
-    font-weight: bold;
-    color: white !important;
+li > a {
+  font-weight: bold;
+  color: white !important;
 }
 
 .navbar-toggler {
-    color: white !important;
-    border: none;
+  color: white !important;
+  border: none;
+}
+
+.no-border-button {
+  border: none;
+  background-color: inherit;
+  color: white;
+}
+.no-border-button:hover {
+  color: rgba(255, 255, 255, 0.397);
+}
+.no-border-button:focus {
+  box-shadow: none !important;
+  border-color: inherit !important;
+  outline: none;
 }

@@ -3,7 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="d8ca2743-fc41-4aab-b501-c57f768b9961" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Services/Dietitian/DietitianService.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Services/Dietitian/DietitianService.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Views/Dietitian/Dietitian.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Views/Dietitian/Dietitian.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -38,11 +37,14 @@
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.detected.package.standard" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
+    <property name="node.js.path.for.package.standard" value="project" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
+    <property name="node.js.selected.package.standard" value="" />
     <property name="nodejs_interpreter_path" value="node" />
     <property name="nodejs_package_manager_path" value="npm" />
-    <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
+    <property name="settings.editor.selected.configurable" value="preferences.keymap" />
   </component>
   <component name="RunManager" selected="npm.npm start">
     <configuration name="Debug Application" type="JavascriptDebugType" uri="http://localhost:3000">
@@ -87,6 +89,7 @@
       <workItem from="1576104424435" duration="14000" />
       <workItem from="1576104478443" duration="19000" />
       <workItem from="1581031149309" duration="966000" />
+      <workItem from="1581950947545" duration="1975000" />
     </task>
     <servers />
   </component>
@@ -94,6 +97,10 @@
     <option name="version" value="1" />
   </component>
   <component name="WindowStateProjectService">
+    <state x="452" y="89" key="#ESLint" timestamp="1581951031481">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="452" y="89" key="#ESLint/0.0.1920.1040/1920.0.1536.824@0.0.1920.1040" timestamp="1581951031481" />
     <state width="1894" height="243" key="GridCell.Tab.0.bottom" timestamp="1581032275723">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -114,6 +121,10 @@
     </state>
     <state width="1894" height="243" key="GridCell.Tab.0.right/0.0.1920.1040/1920.0.1536.824@0.0.1920.1040" timestamp="1581032275723" />
     <state width="1894" height="243" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1576088400189" />
+    <state x="352" y="70" key="SettingsEditor" timestamp="1581972944050">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="352" y="70" key="SettingsEditor/0.0.1920.1040/1920.0.1536.824@0.0.1920.1040" timestamp="1581972944050" />
     <state width="623" height="498" key="SwitcherDM" timestamp="1576025832539">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>

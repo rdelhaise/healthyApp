@@ -4,20 +4,20 @@ import { Router, Route, Switch } from "react-router-dom";
 import history from "./history";
 import Dietitian from "../Views/Dietitian/Dietitian";
 import Error404 from "../Views/Error404";
+import Home from "./Home";
 
 class Routers extends React.Component {
   render() {
+    if (!localStorage.getItem("authenticate")) {
+      history.push("/login");
+    }
     return (
       <Router history={history}>
         <Switch>
-          <Route exact path="/">
-            <Login />
-          </Route>
-          <Route exact path="/home">
-            <Dietitian type={"edit"} />
+          <Route exact path="/home" onEnter={this.requireAuth}>
+            <Home />
           </Route>
           <Route
-            exact
             path="/dietitian/:id/:type"
             render={({ match }) => {
               if (match.params.id && match.params.type) {
@@ -34,8 +34,11 @@ class Routers extends React.Component {
                 }
               }
             }}
+            onEnter={this.requireAuth}
           ></Route>
-          <Route component={Error404} />
+          <Route component={Login} exact path="/login" />
+
+          <Route path={"*"} component={Error404} />
         </Switch>
       </Router>
     );
