@@ -6,6 +6,7 @@ import Dietitian from "../Views/Dietitian/Dietitian";
 import Error404 from "../Views/Error404";
 import Home from "./Home";
 import Patient from "../Views/Patient/Patient";
+import Dietitians from "../Views/Dietitian/Dietitians";
 
 class Routers extends React.Component {
   render() {
@@ -18,6 +19,7 @@ class Routers extends React.Component {
           <Route exact path="/home" onEnter={this.requireAuth}>
             <Home />
           </Route>
+          <Route exact path="/dietitians" component={Dietitians} />
           <Route
             path="/dietitian/:id"
             render={({ match }) => {

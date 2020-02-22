@@ -4,11 +4,22 @@ import Menu from "../../Components/Menu";
 import history from "../../Components/history";
 import Loader from "../../Components/Loader";
 import PatientService from "../../Services/Patient/PatientService";
+import {
+  NotificationManager,
+  NotificationContainer
+} from "react-notifications";
 
 class Patient extends React.Component {
   initialState = {
     isLoaded: false,
     patient: ""
+  };
+  createNotification = (type, message) => {
+    // eslint-disable-next-line default-case
+    switch (type) {
+      case "success":
+        return NotificationManager.success(message);
+    }
   };
 
   constructor(props) {
@@ -36,7 +47,10 @@ class Patient extends React.Component {
   handleSave = e => {
     e.preventDefault();
     PatientService.updatePatient(this.state.patient).then(() => {
-      history.push("/home");
+      this.createNotification(
+        "success",
+        "L'enregistrement a bien été sauvegardé."
+      );
     });
   };
 
@@ -64,6 +78,7 @@ class Patient extends React.Component {
             </div>
           </div>
         )}
+        <NotificationContainer />
       </>
     );
   }

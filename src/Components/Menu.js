@@ -24,7 +24,7 @@ export const Menu = props => {
         <div className="collapse navbar-collapse" id="navbarNavDropdown">
           <ul className="navbar-nav">
             <li className="nav-item active">
-              <Link className="nav-link" to="/">
+              <Link className="nav-link" to="/dietitians">
                 Dietitians list
               </Link>
             </li>

@@ -4,6 +4,10 @@ import Menu from "../../Components/Menu";
 import DietitianService from "../../Services/Dietitian/DietitianService";
 import history from "../../Components/history";
 import Loader from "../../Components/Loader";
+import {
+  NotificationContainer,
+  NotificationManager
+} from "react-notifications";
 
 class Dietitian extends React.Component {
   initialState = {
@@ -17,6 +21,13 @@ class Dietitian extends React.Component {
     this.handleChange = this.handleChange.bind(this);
     this.handleSave = this.handleSave.bind(this);
   }
+  createNotification = (type, message) => {
+    // eslint-disable-next-line default-case
+    switch (type) {
+      case "success":
+        return NotificationManager.success(message);
+    }
+  };
 
   componentDidMount() {
     DietitianService.getDietitianById(this.props.idDietitian).then(json => {
@@ -36,7 +47,10 @@ class Dietitian extends React.Component {
   handleSave = e => {
     e.preventDefault();
     DietitianService.updateDietitian(this.state.dietitian).then(() => {
-      history.push("/");
+      this.createNotification(
+        "success",
+        "L'enregistrement a bien été sauvegardé."
+      );
     });
   };
 
@@ -63,6 +77,7 @@ class Dietitian extends React.Component {
             </div>
           </div>
         )}
+        <NotificationContainer />
       </>
     );
   }
