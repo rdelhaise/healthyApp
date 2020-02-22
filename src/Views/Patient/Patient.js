@@ -1,14 +1,14 @@
 import React from "react";
-import FormDietitian from "../../Components/Dietitian/FormDietitian";
+import FormPatient from "../../Components/Patient/FormPatient";
 import Menu from "../../Components/Menu";
-import DietitianService from "../../Services/Dietitian/DietitianService";
 import history from "../../Components/history";
 import Loader from "../../Components/Loader";
+import PatientService from "../../Services/Patient/PatientService";
 
-class Dietitian extends React.Component {
+class Patient extends React.Component {
   initialState = {
     isLoaded: false,
-    dietitian: ""
+    patient: ""
   };
 
   constructor(props) {
@@ -19,10 +19,10 @@ class Dietitian extends React.Component {
   }
 
   componentDidMount() {
-    DietitianService.getDietitianById(this.props.idDietitian).then(json => {
+    PatientService.getPatientById(this.props.idPatient).then(json => {
       this.setState(state => {
         state.isLoaded = true;
-        state.dietitian = json;
+        state.patient = json;
         return state;
       });
     });
@@ -30,13 +30,13 @@ class Dietitian extends React.Component {
 
   handleChange = e => {
     e.persist();
-    this.setState(state => (state.dietitian[e.target.name] = e.target.value));
+    this.setState(state => (state.patient[e.target.name] = e.target.value));
   };
 
   handleSave = e => {
     e.preventDefault();
-    DietitianService.updateDietitian(this.state.dietitian).then(() => {
-      history.push("/");
+    PatientService.updatePatient(this.state.patient).then(() => {
+      history.push("/home");
     });
   };
 
@@ -44,10 +44,11 @@ class Dietitian extends React.Component {
     return (
       <>
         <Menu />
+
         {this.state.isLoaded ? (
-          this.state.dietitian ? (
-            <FormDietitian
-              dietitian={this.state.dietitian}
+          this.state.patient ? (
+            <FormPatient
+              patient={this.state.patient}
               handleChange={this.handleChange}
               handleSave={this.handleSave}
             />
@@ -68,4 +69,4 @@ class Dietitian extends React.Component {
   }
 }
 
-export default Dietitian;
+export default Patient;

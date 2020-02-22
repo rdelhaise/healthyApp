@@ -5,6 +5,7 @@ import history from "./history";
 import Dietitian from "../Views/Dietitian/Dietitian";
 import Error404 from "../Views/Error404";
 import Home from "./Home";
+import Patient from "../Views/Patient/Patient";
 
 class Routers extends React.Component {
   render() {
@@ -18,20 +19,19 @@ class Routers extends React.Component {
             <Home />
           </Route>
           <Route
-            path="/dietitian/:id/:type"
+            path="/dietitian/:id"
             render={({ match }) => {
-              if (match.params.id && match.params.type) {
-                if (match.params.type === "edit") {
-                  return (
-                    <Dietitian type={"edit"} idDietitian={match.params.id} />
-                  );
-                } else if (match.params.type === "view") {
-                  return (
-                    <Dietitian type={"view"} idDietitian={match.params.id} />
-                  );
-                } else {
-                  return <Error404 />;
-                }
+              if (match.params.id) {
+                return <Dietitian idDietitian={match.params.id} />;
+              }
+            }}
+            onEnter={this.requireAuth}
+          ></Route>
+          <Route
+            path="/patient/:id"
+            render={({ match }) => {
+              if (match.params.id) {
+                return <Patient idPatient={match.params.id} />;
               }
             }}
             onEnter={this.requireAuth}
