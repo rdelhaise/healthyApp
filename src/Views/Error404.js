@@ -19,7 +19,7 @@ const Error404 = () => {
       </div>
       <Link to="/home">
         <img
-          src="/img/medor.png"
+          src="/img/pistache_jedi.png"
           className="rounded mx-auto d-block"
           style={{ cursor: "pointer" }}
           height="500"

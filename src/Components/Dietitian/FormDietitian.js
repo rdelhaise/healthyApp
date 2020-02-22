@@ -6,9 +6,10 @@ class FormDietitian extends React.Component {
       <>
         <div className="container">
           <form className="py-4">
-            <div className="row ">
-              <div className="col-xs-12 form-group form-inline">
-                <div className="col-xs-6">
+            <div className="form-row">
+              <div className="col-4">
+                <div className="form-group">
+                  <label> Last Name </label>
                   <input
                     type="text"
                     className="input form-control"
@@ -17,6 +18,12 @@ class FormDietitian extends React.Component {
                     placeholder="Last Name"
                     value={this.props.dietitian.lastName}
                   ></input>
+                </div>
+              </div>
+              <div className="col-4">
+                <div className="form-group">
+                  <label> Address </label>
+
                   <input
                     type="text"
                     className="input form-control"
@@ -25,6 +32,12 @@ class FormDietitian extends React.Component {
                     placeholder="Address"
                     value={this.props.dietitian.address}
                   ></input>
+                </div>
+              </div>
+              <div className="col-4">
+                <div className="form-group">
+                  <label> City </label>
+
                   <input
                     type="text"
                     className="input form-control"
@@ -33,14 +46,12 @@ class FormDietitian extends React.Component {
                     placeholder="City"
                     value={this.props.dietitian.city}
                   ></input>
-                  <input
-                    type="text"
-                    className="input form-control"
-                    onChange={this.props.handleChange}
-                    name="country"
-                    placeholder="Country"
-                    value={this.props.dietitian.country}
-                  ></input>
+                </div>
+              </div>
+
+              <div className="col-4">
+                <div className="form-group">
+                  <label> First Name </label>
                   <input
                     type="text"
                     className="input form-control"
@@ -49,6 +60,12 @@ class FormDietitian extends React.Component {
                     placeholder="Firstname"
                     value={this.props.dietitian.firstName}
                   ></input>
+                </div>
+              </div>
+              <div className="col-4">
+                <div className="form-group">
+                  <label> Mobile </label>
+
                   <input
                     type="text"
                     className="input form-control"
@@ -57,6 +74,12 @@ class FormDietitian extends React.Component {
                     placeholder="Mobile"
                     value={this.props.dietitian.mobile}
                   ></input>
+                </div>
+              </div>
+              <div className="col-4">
+                <div className="form-group">
+                  <label> Phone </label>
+
                   <input
                     type="text"
                     className="input form-control"
@@ -65,6 +88,11 @@ class FormDietitian extends React.Component {
                     placeholder="Phone Number"
                     value={this.props.dietitian.phoneNumber}
                   ></input>
+                </div>
+              </div>
+              <div className="col-4">
+                <div className="form-group">
+                  <label> Zip </label>
                   <input
                     type="text"
                     className="input form-control"
@@ -73,15 +101,17 @@ class FormDietitian extends React.Component {
                     placeholder="ZipCode"
                     value={this.props.dietitian.zipCode}
                   ></input>
-                  <button
-                    className={"btn btn-success"}
-                    type="submit"
-                    onClick={this.props.handleSave}
-                  >
-                    Enregistrer
-                  </button>
                 </div>
               </div>
+            </div>
+            <div className="row float-right">
+              <button
+                className={"btn btn-success"}
+                type="submit"
+                onClick={this.props.handleSave}
+              >
+                Enregistrer
+              </button>
             </div>
           </form>
         </div>
