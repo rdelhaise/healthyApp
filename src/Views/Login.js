@@ -2,6 +2,12 @@ import React from "react";
 import "../Assets/Login/Login.css";
 import history from "../Components/history";
 import apiUrl from "../config/api";
+import DietitianService from "../Services/Dietitian/DietitianService";
+import PatientService from "../Services/Patient/PatientService";
+import {
+  NotificationContainer,
+  NotificationManager
+} from "react-notifications";
 class Login extends React.Component {
   initialState = {
     username: "",
@@ -11,6 +17,23 @@ class Login extends React.Component {
   constructor(props) {
     super(props);
     this.state = this.initialState;
+  }
+  createNotification = (type, message) => {
+    // eslint-disable-next-line default-case
+    switch (type) {
+      case "success":
+        return NotificationManager.success(message);
+      case "error":
+        return NotificationManager.error(message);
+    }
+  };
+  componentDidMount() {
+    if (history.location.state) {
+      if (history.location.state.isRegistered) {
+        this.createNotification("success", "Your are succefully registered.");
+        //
+      }
+    }
   }
   handleChange = e => {
     e.persist();
@@ -42,32 +65,60 @@ class Login extends React.Component {
         }
       })
       .then(data => {
-        localStorage.setItem(
-          "authenticate",
-          JSON.stringify({
-            role: data.role,
-            id: data.id,
-            logged: true
-          })
-        );
-        history.push("/home");
+        const role = data.role;
+        if (data.role === "1") {
+          DietitianService.getDietitianByUserId(data.id)
+            .then(response => {
+              if (response.status !== 200) {
+                this.setState(
+                  state => (state.error = "Un problème est survenu.")
+                );
+              } else {
+                return response.json();
+              }
+            })
+            .then(dietitian => {
+              localStorage.setItem(
+                "authenticate",
+                JSON.stringify({
+                  role: role,
+                  id: dietitian.id,
+                  logged: true
+                })
+              );
+              history.push("/");
+            });
+        } else if (data.role === "2") {
+          PatientService.getPatientByUserId(data.id)
+            .then(response => {
+              if (response.status !== 200) {
+                this.setState(
+                  state => (state.error = "Un problème est survenu.")
+                );
+              } else {
+                return response.json();
+              }
+            })
+            .then(patient => {
+              localStorage.setItem(
+                "authenticate",
+                JSON.stringify({
+                  role: role,
+                  id: patient.id,
+                  logged: true
+                })
+              );
+              history.push("/");
+            });
+        }
       })
       .catch(err => console.log(err));
-    /*
-    if (this.state.username === "admin" && this.state.password === "admin") {
-      localStorage.setItem(
-        "authenticate",
-        JSON.stringify({ logged: true, role: 1 })
-      );
-
-      history.push("/home");
-    }*/
   };
   render() {
     return (
       <>
         <div className={"container loginForm"}>
-          <div className={"login col-4 mx-auto p-4"}>
+          <div className={"login col-xl-4 col-md-6 mx-auto p-4"}>
             <div className={"text-center text-primary"}>
               <h4>Welcome to Healthy App !</h4>
             </div>
@@ -104,7 +155,7 @@ class Login extends React.Component {
                   type={"button"}
                   formTarget={"login-form"}
                   className={"btn btn-primary col-5 m-auto"}
-                  onClick={this.handleLogin}
+                  onClick={() => history.push("/register")}
                 >
                   {" "}
                   Register{" "}
@@ -113,6 +164,7 @@ class Login extends React.Component {
             </form>
           </div>
         </div>
+        <NotificationContainer />
       </>
     );
   }

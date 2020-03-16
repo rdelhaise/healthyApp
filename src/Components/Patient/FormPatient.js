@@ -1,4 +1,5 @@
 import React from "react";
+import history from "../../Components/history";
 /**
  * <form>
               <div class="form-group"><label for="address"><strong>Address</strong></label><input class="form-control" type="text" placeholder="Sunset Blvd, 38" name="address"></div>
@@ -18,6 +19,17 @@ class FormPatient extends React.Component {
     return (
       <>
         <div className="container">
+          <div className="row my-2">
+            {JSON.parse(localStorage.getItem("authenticate")).role === "1" && (
+              <button
+                className={"btn btn-primary"}
+                type="submit"
+                onClick={() => history.push("/dietitian/patients")}
+              >
+                Retour
+              </button>
+            )}
+          </div>
           <form className="py-4">
             <div className="form-row">
               <div className="col-4">
@@ -30,6 +42,11 @@ class FormPatient extends React.Component {
                     name="lastName"
                     placeholder="Last Name"
                     value={this.props.patient.lastName}
+                    disabled={
+                      history.location.state
+                        ? history.location.state.view
+                        : false
+                    }
                   ></input>
                 </div>
               </div>
@@ -44,6 +61,11 @@ class FormPatient extends React.Component {
                     name="address"
                     placeholder="Address"
                     value={this.props.patient.address}
+                    disabled={
+                      history.location.state
+                        ? history.location.state.view
+                        : false
+                    }
                   ></input>
                 </div>
               </div>
@@ -58,6 +80,11 @@ class FormPatient extends React.Component {
                     name="city"
                     placeholder="City"
                     value={this.props.patient.city}
+                    disabled={
+                      history.location.state
+                        ? history.location.state.view
+                        : false
+                    }
                   ></input>
                 </div>
               </div>
@@ -72,6 +99,11 @@ class FormPatient extends React.Component {
                     name="firstName"
                     placeholder="Firstname"
                     value={this.props.patient.firstName}
+                    disabled={
+                      history.location.state
+                        ? history.location.state.view
+                        : false
+                    }
                   ></input>
                 </div>
               </div>
@@ -86,6 +118,11 @@ class FormPatient extends React.Component {
                     name="mobile"
                     placeholder="Mobile"
                     value={this.props.patient.mobile}
+                    disabled={
+                      history.location.state
+                        ? history.location.state.view
+                        : false
+                    }
                   ></input>
                 </div>
               </div>
@@ -100,6 +137,11 @@ class FormPatient extends React.Component {
                     name="phoneNumber"
                     placeholder="Phone Number"
                     value={this.props.patient.phoneNumber}
+                    disabled={
+                      history.location.state
+                        ? history.location.state.view
+                        : false
+                    }
                   ></input>
                 </div>
               </div>
@@ -113,6 +155,11 @@ class FormPatient extends React.Component {
                     name="zipCode"
                     placeholder="ZipCode"
                     value={this.props.patient.zipCode}
+                    disabled={
+                      history.location.state
+                        ? history.location.state.view
+                        : false
+                    }
                   ></input>
                 </div>
               </div>

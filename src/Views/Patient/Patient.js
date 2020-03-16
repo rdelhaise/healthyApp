@@ -1,7 +1,6 @@
 import React from "react";
 import FormPatient from "../../Components/Patient/FormPatient";
 import Menu from "../../Components/Menu";
-import history from "../../Components/history";
 import Loader from "../../Components/Loader";
 import PatientService from "../../Services/Patient/PatientService";
 import {
@@ -63,7 +62,10 @@ class Patient extends React.Component {
   render() {
     return (
       <>
-        <Menu />
+        <Menu
+          haveDietitian={this.state.patient.dietitian ? true : false}
+          idDietitian={this.state.patient.dietitian}
+        />
 
         {this.state.isLoaded ? (
           this.state.patient ? (

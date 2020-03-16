@@ -1,58 +1,67 @@
 input {
-    border: none !important;
-    border-bottom: 2px solid #ecf0f1 !important;
-    border-radius: 0 !important;
+  border: none !important;
+  border-bottom: 2px solid #ecf0f1 !important;
+  border-radius: 0 !important;
 }
 
 input:focus {
-    border-color: inherit;
-    border-bottom: 2px solid #78e08f !important;
-    box-shadow: none !important;
+  border-color: inherit;
+  border-bottom: 2px solid #78e08f !important;
+  box-shadow: none !important;
+}
+
+select {
+  border: none !important;
+  border-bottom: 2px solid #ecf0f1 !important;
+  border-radius: 0 !important;
+}
+select:focus {
+  border-color: inherit;
+  border-bottom: 2px solid #78e08f !important;
+  box-shadow: none !important;
 }
 
 .btn {
-    border-radius: 0 !important;
+  border-radius: 0 !important;
 }
 
 .btn-success {
-    background-color: #3c6382;
-    border: none
+  background-color: #3c6382;
+  border: none;
 }
 
 .btn-success:hover {
-    background-color: #0a3d62;
+  background-color: #0a3d62;
 }
 
 .btn-success:focus {
-    opacity: 0.8;
-    background-color: #3c6382 !important;
-    box-shadow: none !important;
-    border-color: inherit !important;
+  opacity: 0.8;
+  background-color: #3c6382 !important;
+  box-shadow: none !important;
+  border-color: inherit !important;
 }
 
 .btn-primary {
-    background-color: #f6b93b;
-    border: none
+  background-color: #f6b93b;
+  border: none;
 }
 
 .btn-primary:hover {
-    background-color: #fa983a;
+  background-color: #fa983a;
 }
 
 .btn-primary:focus {
-    opacity: 0.8;
-    background-color: #f6b93b !important;
-    box-shadow: none !important;
-    border-color: inherit !important;
+  opacity: 0.8;
+  background-color: #f6b93b !important;
+  box-shadow: none !important;
+  border-color: inherit !important;
 }
 
 .primary {
-    background-color: #78e08f !important;
-    color: white !important;
+  background-color: #78e08f !important;
+  color: white !important;
 }
 
-
-
 .text-primary {
-    color: #78e08f !important;
+  color: #78e08f !important;
 }

@@ -1,10 +1,26 @@
 import React from "react";
-
+import history from "../../Components/history";
 class FormDietitian extends React.Component {
   render() {
     return (
       <>
         <div className="container">
+          <div className="row my-2">
+            {this.props.haveDietitian ? (
+              <button
+                className={"btn btn-primary"}
+                type="submit"
+                onClick={() =>
+                  history.push(
+                    "/patient/" +
+                      JSON.parse(localStorage.getItem("authenticate")).id
+                  )
+                }
+              >
+                Retour
+              </button>
+            ) : null}
+          </div>
           <form className="py-4">
             <div className="form-row">
               <div className="col-4">
@@ -17,6 +33,11 @@ class FormDietitian extends React.Component {
                     name="lastName"
                     placeholder="Last Name"
                     value={this.props.dietitian.lastName}
+                    disabled={
+                      history.location.state
+                        ? history.location.state.view
+                        : false
+                    }
                   ></input>
                 </div>
               </div>
@@ -31,6 +52,11 @@ class FormDietitian extends React.Component {
                     name="address"
                     placeholder="Address"
                     value={this.props.dietitian.address}
+                    disabled={
+                      history.location.state
+                        ? history.location.state.view
+                        : false
+                    }
                   ></input>
                 </div>
               </div>
@@ -45,6 +71,11 @@ class FormDietitian extends React.Component {
                     name="city"
                     placeholder="City"
                     value={this.props.dietitian.city}
+                    disabled={
+                      history.location.state
+                        ? history.location.state.view
+                        : false
+                    }
                   ></input>
                 </div>
               </div>
@@ -59,6 +90,11 @@ class FormDietitian extends React.Component {
                     name="firstName"
                     placeholder="Firstname"
                     value={this.props.dietitian.firstName}
+                    disabled={
+                      history.location.state
+                        ? history.location.state.view
+                        : false
+                    }
                   ></input>
                 </div>
               </div>
@@ -73,6 +109,11 @@ class FormDietitian extends React.Component {
                     name="mobile"
                     placeholder="Mobile"
                     value={this.props.dietitian.mobile}
+                    disabled={
+                      history.location.state
+                        ? history.location.state.view
+                        : false
+                    }
                   ></input>
                 </div>
               </div>
@@ -87,6 +128,11 @@ class FormDietitian extends React.Component {
                     name="phoneNumber"
                     placeholder="Phone Number"
                     value={this.props.dietitian.phoneNumber}
+                    disabled={
+                      history.location.state
+                        ? history.location.state.view
+                        : false
+                    }
                   ></input>
                 </div>
               </div>
@@ -100,18 +146,25 @@ class FormDietitian extends React.Component {
                     name="zipCode"
                     placeholder="ZipCode"
                     value={this.props.dietitian.zipCode}
+                    disabled={
+                      history.location.state
+                        ? history.location.state.view
+                        : false
+                    }
                   ></input>
                 </div>
               </div>
             </div>
             <div className="row float-right">
-              <button
-                className={"btn btn-success"}
-                type="submit"
-                onClick={this.props.handleSave}
-              >
-                Enregistrer
-              </button>
+              {!history.location.state ? (
+                <button
+                  className={"btn btn-success"}
+                  type="submit"
+                  onClick={this.props.handleSave}
+                >
+                  Enregistrer
+                </button>
+              ) : null}
             </div>
           </form>
         </div>

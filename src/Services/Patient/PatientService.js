@@ -16,6 +16,7 @@ class PatientService {
       })
       .catch(err => console.log(err));
   };
+
   getPatientById = patientId => {
     let myHeaders = {
       Accept: "application/json",
@@ -30,6 +31,17 @@ class PatientService {
         return response.json();
       })
       .catch(err => console.log(err));
+  };
+  getPatientByUserId = userId => {
+    let myHeaders = {
+      Accept: "application/json",
+      "Content-Type": "application/json"
+    };
+
+    return fetch(apiUrlPatient + "user/" + userId, {
+      method: "GET",
+      headers: myHeaders
+    }).catch(err => console.log(err));
   };
 
   updatePatient = patient => {
@@ -47,6 +59,18 @@ class PatientService {
         return response;
       })
       .catch(err => console.log(err));
+  };
+  createPatient = patient => {
+    let myHeaders = {
+      Accept: "application/json",
+      "Content-Type": "application/json"
+    };
+
+    return fetch(apiUrlPatient + "/saveDto", {
+      method: "post",
+      headers: myHeaders,
+      body: JSON.stringify(patient)
+    }).catch(err => console.log(err));
   };
 }
 

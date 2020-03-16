@@ -6,7 +6,7 @@ export class Home extends Component {
     return (
       <div>
         <Menu />
-        Home
+        <div className="container-xl container-sm container-md">Home</div>
       </div>
     );
   }

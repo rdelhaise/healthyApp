@@ -7,10 +7,15 @@ import Error404 from "../Views/Error404";
 import Home from "./Home";
 import Patient from "../Views/Patient/Patient";
 import Dietitians from "../Views/Dietitian/Dietitians";
+import Patients from "../Views/Patient/Patients";
+import Register from "../Views/Register";
 
 class Routers extends React.Component {
   render() {
-    if (!localStorage.getItem("authenticate")) {
+    if (
+      !localStorage.getItem("authenticate") &&
+      history.location.pathname !== "/register"
+    ) {
       history.push("/login");
     }
     return (
@@ -20,6 +25,7 @@ class Routers extends React.Component {
             <Home />
           </Route>
           <Route exact path="/dietitians" component={Dietitians} />
+          <Route exact path="/dietitian/patients" component={Patients} />
           <Route
             path="/dietitian/:id"
             render={({ match }) => {
@@ -27,8 +33,16 @@ class Routers extends React.Component {
                 return <Dietitian idDietitian={match.params.id} />;
               }
             }}
-            onEnter={this.requireAuth}
           ></Route>
+          <Route exact path="/patient/dietitian">
+            <Dietitian
+              idDietitian={
+                history.location.state
+                  ? history.location.state.idDietitian
+                  : null
+              }
+            />
+          </Route>
           <Route
             path="/patient/:id"
             render={({ match }) => {
@@ -36,10 +50,10 @@ class Routers extends React.Component {
                 return <Patient idPatient={match.params.id} />;
               }
             }}
-            onEnter={this.requireAuth}
           ></Route>
-          <Route component={Login} exact path="/login" />
 
+          <Route component={Login} exact path="/login" />
+          <Route component={Register} exact path="/register" />
           <Route path={"*"} component={Error404} />
         </Switch>
       </Router>

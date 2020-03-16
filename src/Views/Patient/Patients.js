@@ -1,11 +1,11 @@
 import React, { Component } from "react";
 import DietitianService from "../../Services/Dietitian/DietitianService";
-import Menu from "../../Components/Menu";
 import Loader from "../../Components/Loader";
+import Menu from "../../Components/Menu";
 import history from "../../Components/history";
-export class Dietitians extends Component {
+export class Patients extends Component {
   initialState = {
-    dietitians: []
+    patients: []
   };
   constructor(props) {
     super(props);
@@ -13,12 +13,12 @@ export class Dietitians extends Component {
   }
 
   componentWillMount() {
-    DietitianService.getDietitians().then(data => {
-      this.setState(state => (state.dietitians = data));
+    DietitianService.getPatientsByDietitianId().then(data => {
+      this.setState(state => (state.patients = data));
     });
   }
-  handleClick = (event, dietitianId) => {
-    history.push("/dietitian/" + dietitianId, { view: true });
+  handleClick = (event, patientId) => {
+    history.push("/patient/" + patientId, { view: true });
   };
 
   render() {
@@ -26,7 +26,7 @@ export class Dietitians extends Component {
       <div>
         <Menu />
         <div className="container">
-          {this.state.dietitians.length > 0 ? (
+          {this.state.patients.length > 0 ? (
             <table className="table table-hover ">
               <thead>
                 <tr>
@@ -37,16 +37,16 @@ export class Dietitians extends Component {
                 </tr>
               </thead>
               <tbody>
-                {this.state.dietitians.map(dietitian => (
+                {this.state.patients.map(patient => (
                   <tr
-                    onClick={event => this.handleClick(event, dietitian.id)}
-                    key={dietitian.id}
+                    onClick={event => this.handleClick(event, patient.id)}
+                    key={patient.id}
                     style={{ cursor: "pointer" }}
                   >
-                    <td>{dietitian.lastName}</td>
-                    <td>{dietitian.firstName}</td>
-                    <td>{dietitian.address}</td>
-                    <td>{dietitian.city}</td>
+                    <td>{patient.lastName}</td>
+                    <td>{patient.firstName}</td>
+                    <td>{patient.address}</td>
+                    <td>{patient.city}</td>
                   </tr>
                 ))}
               </tbody>
@@ -64,4 +64,4 @@ export class Dietitians extends Component {
   }
 }
 
-export default Dietitians;
+export default Patients;

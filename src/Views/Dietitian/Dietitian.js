@@ -2,8 +2,8 @@ import React from "react";
 import FormDietitian from "../../Components/Dietitian/FormDietitian";
 import Menu from "../../Components/Menu";
 import DietitianService from "../../Services/Dietitian/DietitianService";
-import history from "../../Components/history";
 import Loader from "../../Components/Loader";
+import history from "../../Components/history";
 import {
   NotificationContainer,
   NotificationManager
@@ -64,13 +64,20 @@ class Dietitian extends React.Component {
   render() {
     return (
       <>
-        <Menu />
+        <Menu haveDietitian={true} />
         {this.state.isLoaded ? (
           this.state.dietitian ? (
             <FormDietitian
               dietitian={this.state.dietitian}
               handleChange={this.handleChange}
               handleSave={this.handleSave}
+              haveDietitian={
+                history.location.state
+                  ? history.location.state.idDietitian
+                    ? true
+                    : false
+                  : false
+              }
             />
           ) : (
             <div className="row">
