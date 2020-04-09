@@ -1,0 +1,27 @@
+.card {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+
+  border-radius: 0.3 !important;
+}
+.card-footer {
+  border: none;
+  border-top: 0.04em solid black;
+  background-color: white;
+}
+
+.click-card > .card-footer {
+  cursor: pointer !important;
+  font-weight: bold;
+  transition-duration: 0.5s;
+}
+.click-card:focus {
+  cursor: pointer !important;
+  background-color: #82ccdd !important;
+}
+
+.click-card > .card-footer:hover {
+  cursor: pointer !important;
+  color: white;
+  font-weight: bold;
+  background-color: #82ccdd !important;
+}
