@@ -64,7 +64,11 @@ class Patient extends React.Component {
       <>
         <Menu
           haveDietitian={this.state.patient.dietitian ? true : false}
-          idDietitian={this.state.patient.dietitian}
+          idDietitian={
+            this.state.patient.dietitian
+              ? this.state.patient.dietitian.id
+              : null
+          }
         />
 
         {this.state.isLoaded ? (

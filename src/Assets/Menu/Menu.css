@@ -1,5 +1,4 @@
-.navbar > a {
-  color: white !important;
+/*.navbar > a {
 }
 
 li > a {
@@ -24,4 +23,41 @@ li > a {
   box-shadow: none !important;
   border-color: inherit !important;
   outline: none;
+}
+*/
+.navbar-custom {
+  display: flex;
+  background-color: rgb(255, 255, 255);
+  flex-wrap: wrap;
+}
+
+.navItem {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  min-height: 60px;
+  padding: 10px;
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.navItem > a {
+  color: white !important;
+  text-decoration: none;
+}
+
+.navbarLogo {
+  width: 200px;
+  height: 60px;
+}
+
+.navEndItem {
+  flex: 2;
+  justify-content: flex-end;
+}
+
+.log-out {
+  height: 100%;
+  border-left: 1px solid white;
 }

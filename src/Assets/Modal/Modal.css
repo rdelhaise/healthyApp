@@ -1,0 +1,66 @@
+.custom-modal {
+  position: fixed;
+  top: 0;
+  height: 100%;
+  width: 50%;
+  left: 23%;
+  display: flex;
+  flex-wrap: wrap;
+  visibility: hidden;
+  align-items: center;
+  justify-items: center;
+  justify-items: center;
+}
+.modal-body {
+  background-color: white;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+}
+.view-modal {
+  visibility: visible;
+  animation: masuperanimation 1s; /* On utilise "ma super animation" définie plus tôt */
+}
+.custom-modal-content {
+  display: flex;
+
+  text-align: justify;
+  margin-bottom: 30px;
+}
+.custom-modal-title {
+  display: flex;
+
+  margin-bottom: 20px;
+  font-size: 1.5em;
+  width: 100%;
+  text-align: center;
+  justify-self: center;
+}
+.line {
+  width: 100%;
+  margin-bottom: 20px;
+
+  border-bottom: grey 1px solid;
+}
+.modal-overlay {
+  opacity: 0.4;
+  display: flex;
+  flex-wrap: wrap;
+  align-content: center;
+  justify-content: center;
+  position: fixed;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  left: 0;
+  background-color: grey;
+}
+@keyframes masuperanimation {
+  from {
+    left: 0;
+  }
+
+  to {
+    left: 23%;
+  }
+}

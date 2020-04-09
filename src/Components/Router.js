@@ -1,7 +1,7 @@
 import React from "react";
 import Login from "../Views/Login";
 import { Router, Route, Switch } from "react-router-dom";
-import history from "./history";
+import history from "../Components/history";
 import Dietitian from "../Views/Dietitian/Dietitian";
 import Error404 from "../Views/Error404";
 import Home from "./Home";
@@ -11,6 +11,11 @@ import Patients from "../Views/Patient/Patients";
 import Register from "../Views/Register";
 
 class Routers extends React.Component {
+  constructor(props) {
+    super(props);
+    console.log(history);
+  }
+
   render() {
     if (
       !localStorage.getItem("authenticate") &&
@@ -34,15 +39,7 @@ class Routers extends React.Component {
               }
             }}
           ></Route>
-          <Route exact path="/patient/dietitian">
-            <Dietitian
-              idDietitian={
-                history.location.state
-                  ? history.location.state.idDietitian
-                  : null
-              }
-            />
-          </Route>
+          <Route exact path="/patient/dietitian" component={Dietitian}></Route>
           <Route
             path="/patient/:id"
             render={({ match }) => {

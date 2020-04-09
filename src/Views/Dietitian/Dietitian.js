@@ -8,11 +8,13 @@ import {
   NotificationContainer,
   NotificationManager
 } from "react-notifications";
+import Modal from "../../Components/Modal";
 
 class Dietitian extends React.Component {
   initialState = {
     isLoaded: false,
-    dietitian: ""
+    dietitian: "",
+    show: false
   };
 
   constructor(props) {
@@ -20,7 +22,14 @@ class Dietitian extends React.Component {
     this.state = this.initialState;
     this.handleChange = this.handleChange.bind(this);
     this.handleSave = this.handleSave.bind(this);
+    this.showModal = this.showModal.bind(this);
   }
+  showModal = e => {
+    console.log("1");
+    this.setState({
+      show: !this.state.show
+    });
+  };
   createNotification = (type, message) => {
     // eslint-disable-next-line default-case
     switch (type) {
@@ -32,7 +41,12 @@ class Dietitian extends React.Component {
   };
 
   componentDidMount() {
-    DietitianService.getDietitianById(this.props.idDietitian).then(json => {
+    const idDietitian = history.location.state
+      ? history.location.state.idDietitian
+        ? history.location.state.idDietitian
+        : this.props.idDietitian
+      : this.props.idDietitian;
+    DietitianService.getDietitianById(idDietitian).then(json => {
       this.setState(state => {
         state.isLoaded = true;
         state.dietitian = json;
@@ -64,33 +78,50 @@ class Dietitian extends React.Component {
   render() {
     return (
       <>
-        <Menu haveDietitian={true} />
-        {this.state.isLoaded ? (
-          this.state.dietitian ? (
-            <FormDietitian
-              dietitian={this.state.dietitian}
-              handleChange={this.handleChange}
-              handleSave={this.handleSave}
-              haveDietitian={
-                history.location.state
-                  ? history.location.state.idDietitian
-                    ? true
+        <Menu
+          haveDietitian={
+            history.location.state
+              ? !!history.location.state.idDietitian
+              : false
+          }
+        />
+        <div>
+          {this.state.isLoaded ? (
+            this.state.dietitian ? (
+              <FormDietitian
+                dietitian={this.state.dietitian}
+                handleChange={this.handleChange}
+                handleSave={this.handleSave}
+                openModal={this.showModal}
+                haveDietitian={
+                  history.location.state
+                    ? !!history.location.state.idDietitian
                     : false
-                  : false
-              }
-            />
+                }
+              />
+            ) : (
+              <div className="row">
+                <p className="mx-auto">Aucune data</p>
+              </div>
+            )
           ) : (
             <div className="row">
-              <p className="mx-auto">Aucune data</p>
+              <div className="mx-auto">
+                <Loader />
+              </div>
             </div>
-          )
-        ) : (
-          <div className="row">
-            <div className="mx-auto">
-              <Loader />
-            </div>
-          </div>
-        )}
+          )}
+          <Modal
+            onClose={this.showModal}
+            show={this.state.show}
+            title="Voulez-vous choisir ce diététitien ? "
+          >
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nobis
+            deserunt corrupti, ut fugit magni qui quasi nisi amet repellendus
+            non fuga omnis a sed impedit explicabo accusantium nihil doloremque
+            consequuntur.
+          </Modal>
+        </div>
         <NotificationContainer />
       </>
     );

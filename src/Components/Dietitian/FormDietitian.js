@@ -2,24 +2,44 @@ import React from "react";
 import history from "../../Components/history";
 class FormDietitian extends React.Component {
   render() {
+    const storage = JSON.parse(localStorage.getItem("authenticate"));
+
     return (
       <>
-        <div className="container">
+        <div className="container h-100&">
           <div className="row my-2">
-            {this.props.haveDietitian ? (
+            {storage.role === "2" ? (
+              this.props.haveDietitian ? (
+                <button
+                  className={"btn btn-primary"}
+                  type="submit"
+                  onClick={() =>
+                    history.push(
+                      "/patient/" +
+                        JSON.parse(localStorage.getItem("authenticate")).id
+                    )
+                  }
+                >
+                  Retour
+                </button>
+              ) : !this.props.haveDietitian ? (
+                <button
+                  className={"btn btn-primary"}
+                  type="submit"
+                  onClick={this.props.openModal}
+                >
+                  Choisir ce diététitien
+                </button>
+              ) : null
+            ) : (
               <button
                 className={"btn btn-primary"}
                 type="submit"
-                onClick={() =>
-                  history.push(
-                    "/patient/" +
-                      JSON.parse(localStorage.getItem("authenticate")).id
-                  )
-                }
+                onClick={() => history.push("/")}
               >
                 Retour
               </button>
-            ) : null}
+            )}
           </div>
           <form className="py-4">
             <div className="form-row">
@@ -36,7 +56,7 @@ class FormDietitian extends React.Component {
                     disabled={
                       history.location.state
                         ? history.location.state.view
-                        : false
+                        : history.location.state.view
                     }
                   ></input>
                 </div>
@@ -55,7 +75,7 @@ class FormDietitian extends React.Component {
                     disabled={
                       history.location.state
                         ? history.location.state.view
-                        : false
+                        : history.location.state.view
                     }
                   ></input>
                 </div>
@@ -74,7 +94,7 @@ class FormDietitian extends React.Component {
                     disabled={
                       history.location.state
                         ? history.location.state.view
-                        : false
+                        : history.location.state.view
                     }
                   ></input>
                 </div>
@@ -93,7 +113,7 @@ class FormDietitian extends React.Component {
                     disabled={
                       history.location.state
                         ? history.location.state.view
-                        : false
+                        : history.location.state.view
                     }
                   ></input>
                 </div>
@@ -112,7 +132,7 @@ class FormDietitian extends React.Component {
                     disabled={
                       history.location.state
                         ? history.location.state.view
-                        : false
+                        : history.location.state.view
                     }
                   ></input>
                 </div>
@@ -131,7 +151,7 @@ class FormDietitian extends React.Component {
                     disabled={
                       history.location.state
                         ? history.location.state.view
-                        : false
+                        : history.location.state.view
                     }
                   ></input>
                 </div>
@@ -149,7 +169,7 @@ class FormDietitian extends React.Component {
                     disabled={
                       history.location.state
                         ? history.location.state.view
-                        : false
+                        : history.location.state.view
                     }
                   ></input>
                 </div>

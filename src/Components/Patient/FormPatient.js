@@ -43,7 +43,7 @@ class FormPatient extends React.Component {
                     placeholder="Last Name"
                     value={this.props.patient.lastName}
                     disabled={
-                      history.location.state
+                      !history.location.state.view
                         ? history.location.state.view
                         : false
                     }
@@ -62,7 +62,7 @@ class FormPatient extends React.Component {
                     placeholder="Address"
                     value={this.props.patient.address}
                     disabled={
-                      history.location.state
+                      !history.location.state.view
                         ? history.location.state.view
                         : false
                     }
@@ -81,7 +81,7 @@ class FormPatient extends React.Component {
                     placeholder="City"
                     value={this.props.patient.city}
                     disabled={
-                      history.location.state
+                      !history.location.state.view
                         ? history.location.state.view
                         : false
                     }
@@ -100,7 +100,7 @@ class FormPatient extends React.Component {
                     placeholder="Firstname"
                     value={this.props.patient.firstName}
                     disabled={
-                      history.location.state
+                      !history.location.state.view
                         ? history.location.state.view
                         : false
                     }
@@ -119,7 +119,7 @@ class FormPatient extends React.Component {
                     placeholder="Mobile"
                     value={this.props.patient.mobile}
                     disabled={
-                      history.location.state
+                      !history.location.state.view
                         ? history.location.state.view
                         : false
                     }
@@ -138,7 +138,7 @@ class FormPatient extends React.Component {
                     placeholder="Phone Number"
                     value={this.props.patient.phoneNumber}
                     disabled={
-                      history.location.state
+                      !history.location.state.view
                         ? history.location.state.view
                         : false
                     }
@@ -156,7 +156,7 @@ class FormPatient extends React.Component {
                     placeholder="ZipCode"
                     value={this.props.patient.zipCode}
                     disabled={
-                      history.location.state
+                      !history.location.state.view
                         ? history.location.state.view
                         : false
                     }

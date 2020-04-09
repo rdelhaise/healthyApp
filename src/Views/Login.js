@@ -31,7 +31,6 @@ class Login extends React.Component {
     if (history.location.state) {
       if (history.location.state.isRegistered) {
         this.createNotification("success", "Your are succefully registered.");
-        //
       }
     }
   }
@@ -110,6 +109,16 @@ class Login extends React.Component {
               );
               history.push("/");
             });
+        } else if (data.role === "0") {
+          localStorage.setItem(
+            "authenticate",
+            JSON.stringify({
+              role: role,
+              id: data.id,
+              logged: true
+            })
+          );
+          history.push("/");
         }
       })
       .catch(err => console.log(err));
@@ -118,6 +127,7 @@ class Login extends React.Component {
     return (
       <>
         <div className={"container loginForm"}>
+          <hr style={{ borderTopColor: "#2c3e50" }} />
           <div className={"login col-xl-4 col-md-6 mx-auto p-4"}>
             <div className={"text-center text-primary"}>
               <h4>Welcome to Healthy App !</h4>
@@ -163,6 +173,7 @@ class Login extends React.Component {
               </div>
             </form>
           </div>
+          <hr style={{ borderTopColor: "#2c3e50" }} />
         </div>
         <NotificationContainer />
       </>
