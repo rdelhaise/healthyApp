@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import Menu from "./Menu";
 import UserService from "../Services/User/UserService";
+import DietitianService from "../Services/Dietitian/DietitianService";
 import Loader from "./Loader";
 import "../Assets/Home/Home.css";
 
@@ -10,6 +11,7 @@ export class Home extends Component {
     this.state = {
       users: [],
       patient: [],
+      nbrPatient: 0,
     };
   }
 
@@ -18,6 +20,11 @@ export class Home extends Component {
     if (storage.role === "0") {
       UserService.getUsers().then((data) => {
         this.setState((state) => (state.users = data));
+      });
+    }
+    if (storage.role === "1") {
+      DietitianService.getNbrPatient(storage.id).then((data) => {
+        this.setState({ nbrPatient: data });
       });
     }
   }
@@ -113,7 +120,9 @@ export class Home extends Component {
                           <span className="mx-4">Patients</span>
                         </h4>
                         <div className="shedule-list d-xl-flex align-items-center justify-content-start mb-3 ">
-                          <h3 className="text-right">63</h3>
+                          <h3 className="text-right">
+                            {this.state.nbrPatient}
+                          </h3>
                         </div>
                       </div>
                     </div>

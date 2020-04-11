@@ -3,7 +3,7 @@ import "../Assets/Modal/Modal.css";
 import PropTypes from "prop-types";
 
 export default class Modal extends React.Component {
-  onClose = e => {
+  onClose = (e) => {
     this.props.onClose && this.props.onClose(e);
   };
   render() {
@@ -26,7 +26,10 @@ export default class Modal extends React.Component {
               >
                 Close
               </button>
-              <button className="btn btn-success px-5" onClick={this.onClose}>
+              <button
+                className="btn btn-success px-5"
+                onClick={this.props.onClick}
+              >
                 Save
               </button>
             </div>
@@ -39,7 +42,7 @@ export default class Modal extends React.Component {
 Modal.propTypes = {
   onClose: PropTypes.func.isRequired,
   show: PropTypes.bool.isRequired,
-  title: PropTypes.string.isRequired
+  title: PropTypes.string.isRequired,
 };
 /**
  * <button

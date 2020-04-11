@@ -5,7 +5,7 @@ import Menu from "../../Components/Menu";
 import history from "../../Components/history";
 export class Patients extends Component {
   initialState = {
-    patients: []
+    patients: [],
   };
   constructor(props) {
     super(props);
@@ -13,9 +13,11 @@ export class Patients extends Component {
   }
 
   componentWillMount() {
-    DietitianService.getPatientsByDietitianId().then(data => {
-      this.setState(state => (state.patients = data));
-    });
+    DietitianService.getPatientsByDietitianId(this.props.idDietitian).then(
+      (data) => {
+        this.setState((state) => (state.patients = data));
+      }
+    );
   }
   handleClick = (event, patientId) => {
     history.push("/patient/" + patientId, { view: true });
@@ -37,9 +39,9 @@ export class Patients extends Component {
                 </tr>
               </thead>
               <tbody>
-                {this.state.patients.map(patient => (
+                {this.state.patients.map((patient) => (
                   <tr
-                    onClick={event => this.handleClick(event, patient.id)}
+                    onClick={(event) => this.handleClick(event, patient.id)}
                     key={patient.id}
                     style={{ cursor: "pointer" }}
                   >

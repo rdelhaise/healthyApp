@@ -24,7 +24,7 @@ class FormPatient extends React.Component {
               <button
                 className={"btn btn-primary"}
                 type="submit"
-                onClick={() => history.push("/dietitian/patients")}
+                onClick={() => history.push("/")}
               >
                 Retour
               </button>

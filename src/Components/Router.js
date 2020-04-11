@@ -30,7 +30,15 @@ class Routers extends React.Component {
             <Home />
           </Route>
           <Route exact path="/dietitians" component={Dietitians} />
-          <Route exact path="/dietitian/patients" component={Patients} />
+          <Route
+            exact
+            path="/dietitian/:id/patients"
+            render={({ match }) => {
+              if (match.params.id) {
+                return <Patients idDietitian={match.params.id} />;
+              }
+            }}
+          />
           <Route
             path="/dietitian/:id"
             render={({ match }) => {

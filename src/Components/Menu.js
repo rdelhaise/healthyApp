@@ -3,7 +3,7 @@ import "../Assets/Menu/Menu.css";
 import history from "../Components/history";
 import { Link } from "react-router-dom";
 
-export const Menu = props => {
+export const Menu = (props) => {
   const storage = JSON.parse(localStorage.getItem("authenticate"));
   return (
     <>
@@ -28,7 +28,7 @@ export const Menu = props => {
                   className="nav-link"
                   to={{
                     pathname: "/patient/dietitian",
-                    state: { idDietitian: props.idDietitian, view: true }
+                    state: { idDietitian: props.idDietitian, view: true },
                   }}
                 >
                   My dietitian
@@ -41,7 +41,7 @@ export const Menu = props => {
               <Link
                 className="nav-link"
                 to={{
-                  pathname: "/dietitian/patients"
+                  pathname: "/dietitian/" + storage.id + "/patients",
                 }}
               >
                 My patient's list
@@ -58,7 +58,7 @@ export const Menu = props => {
                     : storage.role === "2"
                     ? "/patient/" + storage.id // chopper l'id du patient
                     : "",
-                state: { view: false }
+                state: { view: false },
               }}
             >
               My profile

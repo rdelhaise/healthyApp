@@ -4,92 +4,107 @@ class DietitianService {
   getDietitians = () => {
     let myHeaders = {
       Accept: "application/json",
-      "Content-Type": "application/json"
+      "Content-Type": "application/json",
     };
 
     return fetch(apiUrlDietitian + "all", {
       method: "GET",
-      headers: myHeaders
+      headers: myHeaders,
     })
-      .then(response => {
+      .then((response) => {
         return response.json();
       })
-      .catch(err => console.log(err));
+      .catch((err) => console.log(err));
   };
-  getPatientsByDietitianId = dietitianId => {
+  getPatientsByDietitianId = (dietitianId) => {
     let myHeaders = {
       Accept: "application/json",
-      "Content-Type": "application/json"
+      "Content-Type": "application/json",
     };
 
-    return fetch(apiUrlDietitian + "dietitian/patients/" + dietitianId, {
+    return fetch(apiUrl + "patient/all/dietitian/" + dietitianId, {
       method: "GET",
-      headers: myHeaders
+      headers: myHeaders,
     })
-      .then(response => {
+      .then((response) => {
         return response.json();
       })
-      .catch(err => console.log(err));
+      .catch((err) => console.log(err));
   };
-  getDietitianById = dietitianId => {
+  getDietitianById = (dietitianId) => {
     let myHeaders = {
       Accept: "application/json",
-      "Content-Type": "application/json"
+      "Content-Type": "application/json",
     };
 
     return fetch(apiUrlDietitian + dietitianId, {
       method: "GET",
-      headers: myHeaders
+      headers: myHeaders,
     })
-      .then(response => {
+      .then((response) => {
         return response.json();
       })
-      .catch(err => console.log(err));
+      .catch((err) => console.log(err));
   };
 
-  getDietitianByUserId = userId => {
+  getDietitianByUserId = (userId) => {
     let myHeaders = {
       Accept: "application/json",
-      "Content-Type": "application/json"
+      "Content-Type": "application/json",
     };
 
     return fetch(apiUrlDietitian + "user/" + userId, {
       method: "GET",
-      headers: myHeaders
-    }).catch(err => console.log(err));
+      headers: myHeaders,
+    }).catch((err) => console.log(err));
   };
 
-  updateDietitian = dietitian => {
+  updateDietitian = (dietitian) => {
     let myHeaders = {
       Accept: "application/json",
-      "Content-Type": "application/json"
+      "Content-Type": "application/json",
     };
 
     return fetch(apiUrlDietitian + "/save", {
       method: "post",
       headers: myHeaders,
-      body: JSON.stringify(dietitian)
+      body: JSON.stringify(dietitian),
     })
-      .then(response => {
+      .then((response) => {
         return response;
       })
-      .catch(err => console.log(err));
+      .catch((err) => console.log(err));
   };
-  createDietitian = dietitian => {
+  createDietitian = (dietitian) => {
     let myHeaders = {
       Accept: "application/json",
-      "Content-Type": "application/json"
+      "Content-Type": "application/json",
     };
 
     return fetch(apiUrlDietitian + "/saveDto", {
       method: "post",
       headers: myHeaders,
-      body: JSON.stringify(dietitian)
+      body: JSON.stringify(dietitian),
     })
-      .then(response => {
+      .then((response) => {
         return response;
       })
-      .catch(err => console.log(err));
+      .catch((err) => console.log(err));
+  };
+  getNbrPatient = (idDietitian) => {
+    let myHeaders = {
+      Accept: "application/json",
+      "Content-Type": "application/json",
+    };
+
+    return fetch(apiUrl + "patient/nb/dietitian/" + idDietitian, {
+      method: "get",
+      headers: myHeaders,
+    })
+      .then((response) => {
+        return response.json();
+      })
+      .catch((err) => console.log(err));
   };
 }
 

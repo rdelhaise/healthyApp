@@ -6,13 +6,13 @@ import DietitianService from "../Services/Dietitian/DietitianService";
 import PatientService from "../Services/Patient/PatientService";
 import {
   NotificationContainer,
-  NotificationManager
+  NotificationManager,
 } from "react-notifications";
 class Login extends React.Component {
   initialState = {
     username: "",
     password: "",
-    error: ""
+    error: "",
   };
   constructor(props) {
     super(props);
@@ -34,77 +34,77 @@ class Login extends React.Component {
       }
     }
   }
-  handleChange = e => {
+  handleChange = (e) => {
     e.persist();
-    this.setState(state => (state[e.target.name] = e.target.value));
+    this.setState((state) => (state[e.target.name] = e.target.value));
   };
 
-  handleLogin = event => {
+  handleLogin = (event) => {
     event.preventDefault();
     let myHeaders = {
       Accept: "application/json",
-      "Content-Type": "application/json"
+      "Content-Type": "application/json",
     };
 
-    return fetch(apiUrl + "/user/login", {
+    return fetch(apiUrl + "user/login", {
       method: "post",
       headers: myHeaders,
       body: JSON.stringify({
         email: this.state.username,
-        password: this.state.password
-      })
+        password: this.state.password,
+      }),
     })
-      .then(response => {
+      .then((response) => {
         if (response.status !== 200) {
           this.setState(
-            state => (state.error = "Vos identifiants sont incorrects.")
+            (state) => (state.error = "Vos identifiants sont incorrects.")
           );
         } else {
           return response.json();
         }
       })
-      .then(data => {
+      .then((data) => {
         const role = data.role;
         if (data.role === "1") {
           DietitianService.getDietitianByUserId(data.id)
-            .then(response => {
+            .then((response) => {
               if (response.status !== 200) {
                 this.setState(
-                  state => (state.error = "Un problème est survenu.")
+                  (state) => (state.error = "Un problème est survenu.")
                 );
               } else {
                 return response.json();
               }
             })
-            .then(dietitian => {
+            .then((dietitian) => {
               localStorage.setItem(
                 "authenticate",
                 JSON.stringify({
                   role: role,
                   id: dietitian.id,
-                  logged: true
+                  logged: true,
                 })
               );
               history.push("/");
             });
         } else if (data.role === "2") {
           PatientService.getPatientByUserId(data.id)
-            .then(response => {
+            .then((response) => {
               if (response.status !== 200) {
                 this.setState(
-                  state => (state.error = "Un problème est survenu.")
+                  (state) => (state.error = "Un problème est survenu.")
                 );
               } else {
                 return response.json();
               }
             })
-            .then(patient => {
+            .then((patient) => {
               localStorage.setItem(
                 "authenticate",
                 JSON.stringify({
                   role: role,
                   id: patient.id,
-                  logged: true
+                  logged: true,
                 })
               );
               history.push("/");
@@ -115,13 +115,13 @@ class Login extends React.Component {
             JSON.stringify({
               role: role,
               id: data.id,
-              logged: true
+              logged: true,
             })
           );
           history.push("/");
         }
       })
-      .catch(err => console.log(err));
+      .catch((err) => console.log(err));
   };
   render() {
     return (

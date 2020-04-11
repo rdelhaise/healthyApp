@@ -4,73 +4,73 @@ class PatientService {
   getPatients = () => {
     let myHeaders = {
       Accept: "application/json",
-      "Content-Type": "application/json"
+      "Content-Type": "application/json",
     };
 
     return fetch(apiUrlPatient + "all", {
       method: "GET",
-      headers: myHeaders
+      headers: myHeaders,
     })
-      .then(response => {
+      .then((response) => {
         return response.json();
       })
-      .catch(err => console.log(err));
+      .catch((err) => console.log(err));
   };
 
-  getPatientById = patientId => {
+  getPatientById = (patientId) => {
     let myHeaders = {
       Accept: "application/json",
-      "Content-Type": "application/json"
+      "Content-Type": "application/json",
     };
 
     return fetch(apiUrlPatient + patientId, {
       method: "GET",
-      headers: myHeaders
+      headers: myHeaders,
     })
-      .then(response => {
+      .then((response) => {
         return response.json();
       })
-      .catch(err => console.log(err));
+      .catch((err) => console.log(err));
   };
-  getPatientByUserId = userId => {
+  getPatientByUserId = (userId) => {
     let myHeaders = {
       Accept: "application/json",
-      "Content-Type": "application/json"
+      "Content-Type": "application/json",
     };
 
     return fetch(apiUrlPatient + "user/" + userId, {
       method: "GET",
-      headers: myHeaders
-    }).catch(err => console.log(err));
+      headers: myHeaders,
+    }).catch((err) => console.log(err));
   };
 
-  updatePatient = patient => {
+  updatePatient = (patient) => {
     let myHeaders = {
       Accept: "application/json",
-      "Content-Type": "application/json"
+      "Content-Type": "application/json",
     };
 
-    return fetch(apiUrlPatient + "/save", {
+    return fetch(apiUrlPatient + "save", {
       method: "post",
       headers: myHeaders,
-      body: JSON.stringify(patient)
+      body: JSON.stringify(patient),
     })
-      .then(response => {
+      .then((response) => {
         return response;
       })
-      .catch(err => console.log(err));
+      .catch((err) => console.log(err));
   };
-  createPatient = patient => {
+  createPatient = (patient) => {
     let myHeaders = {
       Accept: "application/json",
-      "Content-Type": "application/json"
+      "Content-Type": "application/json",
     };
 
-    return fetch(apiUrlPatient + "/saveDto", {
+    return fetch(apiUrlPatient + "saveDto", {
       method: "post",
       headers: myHeaders,
-      body: JSON.stringify(patient)
-    }).catch(err => console.log(err));
+      body: JSON.stringify(patient),
+    }).catch((err) => console.log(err));
   };
 }
 

@@ -13,12 +13,7 @@ class FormDietitian extends React.Component {
                 <button
                   className={"btn btn-primary"}
                   type="submit"
-                  onClick={() =>
-                    history.push(
-                      "/patient/" +
-                        JSON.parse(localStorage.getItem("authenticate")).id
-                    )
-                  }
+                  onClick={() => history.push("/")}
                 >
                   Retour
                 </button>
@@ -32,13 +27,15 @@ class FormDietitian extends React.Component {
                 </button>
               ) : null
             ) : (
-              <button
-                className={"btn btn-primary"}
-                type="submit"
-                onClick={() => history.push("/")}
-              >
-                Retour
-              </button>
+              <>
+                <button
+                  className={"btn btn-primary"}
+                  type="submit"
+                  onClick={() => history.push("/")}
+                >
+                  Retour
+                </button>
+              </>
             )}
           </div>
           <form className="py-4">
@@ -175,8 +172,9 @@ class FormDietitian extends React.Component {
                 </div>
               </div>
             </div>
+
             <div className="row float-right">
-              {!history.location.state ? (
+              {storage.role === "1" ? (
                 <button
                   className={"btn btn-success"}
                   type="submit"

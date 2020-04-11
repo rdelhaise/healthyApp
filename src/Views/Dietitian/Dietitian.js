@@ -2,11 +2,12 @@ import React from "react";
 import FormDietitian from "../../Components/Dietitian/FormDietitian";
 import Menu from "../../Components/Menu";
 import DietitianService from "../../Services/Dietitian/DietitianService";
+import PatientService from "../../Services/Patient/PatientService";
 import Loader from "../../Components/Loader";
 import history from "../../Components/history";
 import {
   NotificationContainer,
-  NotificationManager
+  NotificationManager,
 } from "react-notifications";
 import Modal from "../../Components/Modal";
 
@@ -14,7 +15,7 @@ class Dietitian extends React.Component {
   initialState = {
     isLoaded: false,
     dietitian: "",
-    show: false
+    show: false,
   };
 
   constructor(props) {
@@ -23,11 +24,11 @@ class Dietitian extends React.Component {
     this.handleChange = this.handleChange.bind(this);
     this.handleSave = this.handleSave.bind(this);
     this.showModal = this.showModal.bind(this);
+    this.chooseDietitian = this.chooseDietitian.bind(this);
   }
-  showModal = e => {
-    console.log("1");
+  showModal = (e) => {
     this.setState({
-      show: !this.state.show
+      show: !this.state.show,
     });
   };
   createNotification = (type, message) => {
@@ -46,8 +47,8 @@ class Dietitian extends React.Component {
         ? history.location.state.idDietitian
         : this.props.idDietitian
       : this.props.idDietitian;
-    DietitianService.getDietitianById(idDietitian).then(json => {
-      this.setState(state => {
+    DietitianService.getDietitianById(idDietitian).then((json) => {
+      this.setState((state) => {
         state.isLoaded = true;
         state.dietitian = json;
         return state;
@@ -55,14 +56,31 @@ class Dietitian extends React.Component {
     });
   }
 
-  handleChange = e => {
+  handleChange = (e) => {
     e.persist();
-    this.setState(state => (state.dietitian[e.target.name] = e.target.value));
+    this.setState((state) => (state.dietitian[e.target.name] = e.target.value));
   };
-
-  handleSave = e => {
+  chooseDietitian = (e) => {
+    e.persist();
     e.preventDefault();
-    DietitianService.updateDietitian(this.state.dietitian).then(response => {
+    PatientService.getPatientById(
+      JSON.parse(localStorage.getItem("authenticate")).id
+    ).then((data) => {
+      data["dietitian"] = { id: this.state.dietitian.id };
+      PatientService.updatePatient(data).then((data) => {
+        this.setState({
+          show: !this.state.show,
+        });
+        history.push("/");
+      });
+    });
+    this.setState({
+      show: !this.state.show,
+    });
+  };
+  handleSave = (e) => {
+    e.preventDefault();
+    DietitianService.updateDietitian(this.state.dietitian).then((response) => {
       console.log(response);
       if (response.status === 201) {
         this.createNotification(
@@ -115,6 +133,7 @@ class Dietitian extends React.Component {
             onClose={this.showModal}
             show={this.state.show}
             title="Voulez-vous choisir ce diététitien ? "
+            onClick={this.chooseDietitian}
           >
             Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nobis
             deserunt corrupti, ut fugit magni qui quasi nisi amet repellendus
